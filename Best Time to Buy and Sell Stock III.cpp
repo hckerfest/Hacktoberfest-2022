@@ -1,4 +1,4 @@
- int solve(vector<int>&prices, int day, int transactionsLeft, vector<vector<int>> &Memo){
+ int solve(list<int>&prices, int day, int transactionsLeft, list<list<int>> &Memo){
         
         if(day == prices.size()){
             return 0;
@@ -36,9 +36,9 @@
     }
     
     
-    int maxProfit(vector<int>& prices) {
+    int maxProfit(list<int>& prices) {
         
-        vector<vector<int>> Memo(prices.size(), vector<int>(5, -1));
+        list<list<int>> Memo(prices.size(), list<int>(5, -1));
         int ans = solve(prices, 0, 4, Memo);
         return ans;
         
