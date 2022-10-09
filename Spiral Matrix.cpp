@@ -1,46 +1,37 @@
-vector<int> spiralOrder(vector<vector<int>>& matrix) {
-        
-        vector<int> ans;
-        int dir = 0;
-        int L = 0;
-        int T = 0;
-        int R = matrix[0].size()-1;
-        int B = matrix.size()-1;
-        while(L<=R && T<=B)
-        {
-            if(dir==0)
-            {
-              for(int i=L;i<=R;i++)
-              {
-                 ans.emplace_back(matrix[T][i]); 
-              }
-              T++;
-            }
-            if(dir==1)
-            {
-              for(int i=T;i<=B;i++)
-              {
-                 ans.emplace_back(matrix[i][R]); 
-              }  
-              R--;
-            }
-            if(dir==2)
-            {
-              for(int i=R;i>=L;i--)
-              {
-                  ans.emplace_back(matrix[B][i]);  
-              }  
-              B--;
-            }
-            if(dir==3)
-            {
-              for(int i=B;i>=T;i--)
-              {
-                  ans.emplace_back(matrix[i][L]); 
-              }
-              L++;
-            }
-          dir = (dir+1)%4;
-        }
-        return ans;
+package files.applets;
+
+import java.awt.*;
+import java.applet.Applet;
+
+public class Applet4 extends Applet
+{
+    TextField t1,t2,t3;
+    Button b;
+    Label l;
+
+    public void init()
+    {
+        add(t1 = new TextField(15));
+        add(l = new Label("+"));//pass string as +
+        add(t2 = new TextField(15));
+        add(b = new Button("="));
+        add(t3 = new TextField(15));
     }
+
+    public boolean action(Event e, Object o)
+    {
+        if(e.target.equals(b))
+        {
+            String s = t1.getText();
+            int i = Integer.parseInt(s);
+            String s1 = t2.getText();
+     
+            int j = Integer.parseInt(s1);
+            int k = i+j;/
+            
+            t3.setText(String.valueOf(k));
+        } 
+            return true;
+    }     
+
+};
